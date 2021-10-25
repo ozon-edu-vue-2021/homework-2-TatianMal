@@ -1,7 +1,9 @@
 <template>
   <div>
-    <div class="dir-name" @click="toggleShowChildren">
-      <directory-icon style="width:12px"/><span>{{ name }}</span> <arrow-icon style="width:12px"/>
+    <div class="tree-list-name" @click="toggleShowChildren">
+      <directory-icon class="icon"/>
+      <span>{{ name }}</span>
+      <arrow-icon class="icon-arrow"/>
     </div>
     <div
       v-if="showChildren"
@@ -70,5 +72,11 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.active {
+  background-color: rgb(14, 14, 172);
+}
+.children {
+  margin-left: 3vw;
+}
 </style>

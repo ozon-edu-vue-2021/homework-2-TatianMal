@@ -1,7 +1,8 @@
 <template>
   <div>
-    <div class="file-name" @click="setActive">
-      <file-icon style="width:12px"/><span>{{ item.name }}{{ item.target }}</span>
+    <div class="tree-list-name" @click="setActive">
+      <file-icon class="icon"/>
+      <span>{{ item.name }}{{ item.target }}</span>
     </div>
   </div>
 </template>
@@ -20,6 +21,5 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
 </style>
