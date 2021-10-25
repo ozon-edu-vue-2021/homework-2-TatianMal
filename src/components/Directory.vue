@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="dir-name" @click="toggleShowChildren">
-      <span>{{ name }}</span>
+      <directory-icon style="width:12px"/><span>{{ name }}</span> <arrow-icon style="width:12px"/>
     </div>
     <div
       v-if="showChildren"
@@ -19,10 +19,20 @@
 
 <script>
 import TreeElementMixin from "@/mixins/TreeElementMixin";
+import DirectoryIcon from "@/components/icons/DirectoryIcon";
+import ArrowIcon from "@/components/icons/ArrowIcon";
+import File from "@/components/File";
+import Link from "@/components/Link";
 
 export default {
   name: "Directory",
   mixins: [TreeElementMixin],
+  components: {
+    DirectoryIcon,
+    ArrowIcon,
+    File,
+    Link,
+  },
   data() {
     return {
       showChildren: false,
@@ -38,7 +48,7 @@ export default {
   },
   methods: {
     toggleShowChildren () {
-      this.showChildren != this.showChildren;
+      this.showChildren = !this.showChildren;
     },
     defineComponent(type) {
       switch (type) {
