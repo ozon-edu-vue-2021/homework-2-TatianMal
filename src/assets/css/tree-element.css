@@ -6,6 +6,7 @@
 
 .tree-list-name:hover {
   background-color: rgb(193, 193, 238);
+  color: rgb(43, 62, 80);
 }
 
 .icon {
@@ -16,4 +17,9 @@
 .icon-arrow {
   width: 2vh;
   margin-left: 5px;
+}
+
+.active {
+  background-color: rgb(75, 48, 251);
+  color:rgb(240, 248, 255);
 }

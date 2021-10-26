@@ -14,6 +14,8 @@
         :key="item.name"
         :is="defineComponent(item.type)"
         :item="item"
+        :current-active="currentActive"
+        @setActive="$emit('setActive', $event)"
       ></component>
     </div>
   </div>

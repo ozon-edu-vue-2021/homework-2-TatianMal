@@ -2,27 +2,37 @@
   <div id="app">
     <directory
       :item="tree"
+      :current-active="currentActive"
+      @setActive="setActive"
     ></directory>
   </div>
 </template>
 
 <script>
 import Directory from "@/components/Directory";
-import tree from "../public/static/node_modules.json"
+import tree from "../public/static/node_modules.json";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     Directory,
   },
-  data: () => ({
-    tree
-  })
-}
+  data() {
+    return {
+      tree,
+      currentActive: undefined,
+    };
+  },
+  methods: {
+    setActive(id) {
+      this.currentActive = id;
+    },
+  },
+};
 </script>
 
 <style>
-@import './assets/css/tree-element.css';
+@import "./assets/css/tree-element.css";
 
 #app {
   display: flex;
@@ -30,7 +40,6 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
   margin: 60px;
 }
 </style>

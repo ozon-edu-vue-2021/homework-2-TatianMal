@@ -4,5 +4,8 @@ export default {
       type: Object,
       required: true,
     },
+    currentActive: {
+      type: String,
+    },
   },
-}
+};
