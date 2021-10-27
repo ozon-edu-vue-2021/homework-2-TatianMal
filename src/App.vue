@@ -2,6 +2,7 @@
   <div id="app">
     <directory
       :item="tree"
+      :path="tree.name"
       :current-active="currentActive"
       @setActive="setActive"
     ></directory>
@@ -24,8 +25,8 @@ export default {
     };
   },
   methods: {
-    setActive(id) {
-      this.currentActive = id;
+    setActive(path) {
+      this.currentActive = path;
     },
   },
 };

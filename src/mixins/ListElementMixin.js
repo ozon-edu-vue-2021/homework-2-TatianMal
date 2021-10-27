@@ -1,7 +1,7 @@
 export default {
   computed: {
     isActive() {
-      return this.currentActive === this.id;
+      return this.currentActive === this.path;
     },
     classList() {
       const classes = ["tree-list-name"];
@@ -12,8 +12,8 @@ export default {
     },
   },
   methods: {
-    setActive(id) {
-      this.$emit("setActive", id);
+    setActive(path) {
+      this.$emit("setActive", path);
     },
   },
 };

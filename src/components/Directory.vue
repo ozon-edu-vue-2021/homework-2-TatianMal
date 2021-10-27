@@ -11,9 +11,10 @@
     >
       <component
         v-for="item in contents"
-        :key="item.name"
+        :key="getChildPath(item.name)"
         :is="defineComponent(item.type)"
         :item="item"
+        :path="getChildPath(item.name)"
         :current-active="currentActive"
         @setActive="$emit('setActive', $event)"
       ></component>
@@ -69,6 +70,9 @@ export default {
           throw Error(`Not existed component: ${type}`);
         }
       }
+    },
+    getChildPath(name) {
+      return [this.path, name].join("\\");
     },
   },
 };

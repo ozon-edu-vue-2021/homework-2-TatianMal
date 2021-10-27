@@ -7,5 +7,9 @@ export default {
     currentActive: {
       type: String,
     },
+    path: {
+      type: String,
+      required: true,
+    }
   },
 };
