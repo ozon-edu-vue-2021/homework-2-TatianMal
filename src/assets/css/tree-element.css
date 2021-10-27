@@ -2,6 +2,7 @@
   padding: 10px;
   display: flex;
   justify-content: flex-start;
+  cursor: pointer;
 }
 
 .tree-list-name:hover {

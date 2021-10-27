@@ -83,6 +83,6 @@ export default {
   background-color: rgb(14, 14, 172);
 }
 .children {
-  margin-left: 3vw;
+  margin-left: 4vw;
 }
 </style>
