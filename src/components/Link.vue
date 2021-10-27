@@ -1,7 +1,10 @@
 <template>
   <div :class="classList" @click="setActive(path)">
     <link-icon class="icon" />
-    <span>{{ item.name }}{{ item.target }}</span>
+    <div class="link-fullname">
+      <span>{{ item.name }}</span>
+      <span class="link-target">{{ target }}</span>
+    </div>
   </div>
 </template>
 
@@ -16,8 +19,20 @@ export default {
   components: {
     LinkIcon,
   },
+  computed: {
+    target () {
+      return `Ссылается на: ${this.item.target}`
+    },
+  },
 };
 </script>
 
 <style scoped>
+.link-fullname {
+  display: flex;
+  flex-direction: column;
+}
+.link-target {
+  font-size: 0.70em;
+}
 </style>

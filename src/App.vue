@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <span class="full-path">{{ currentActivePath }}</span>
     <directory
       :item="tree"
       :path="tree.name"
@@ -24,6 +25,11 @@ export default {
       currentActive: undefined,
     };
   },
+  computed: {
+    currentActivePath() {
+      return this.currentActive ? `Путь выбранного файла/ссылки: ${this.currentActive}` : "";
+    },
+  },
   methods: {
     setActive(path) {
       this.currentActive = path;
@@ -37,10 +43,16 @@ export default {
 
 #app {
   display: flex;
-  justify-items: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 1em;
   margin: 60px;
+}
+
+.full-path {
+  margin-bottom: 2vh;
 }
 </style>

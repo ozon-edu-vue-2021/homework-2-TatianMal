@@ -58,13 +58,13 @@ export default {
     defineComponent(type) {
       switch (type) {
         case "directory": {
-          return "directory";
+          return "Directory";
         }
         case "link": {
-          return "link";
+          return "Link";
         }
         case "file": {
-          return "file";
+          return "File";
         }
         default: {
           throw Error(`Not existed component: ${type}`);
