@@ -1,0 +1,26 @@
+.tree-list-name {
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  cursor: pointer;
+}
+
+.tree-list-name:hover {
+  background-color: rgb(193, 193, 238);
+  color: rgb(43, 62, 80);
+}
+
+.icon {
+  width: 3vh;
+  margin: 0 5px;
+}
+
+.icon-arrow {
+  width: 2vh;
+  margin-left: 5px;
+}
+
+.active {
+  background-color: rgb(75, 48, 251);
+  color:rgb(240, 248, 255);
+}

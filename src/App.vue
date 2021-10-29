@@ -1,28 +1,58 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <span class="full-path">{{ currentActivePath }}</span>
+    <directory
+      :item="tree"
+      :path="tree.name"
+      :current-active="currentActive"
+      @setActive="setActive"
+    ></directory>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Directory from "@/components/Directory";
+import tree from "../public/static/node_modules.json";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    Directory,
+  },
+  data() {
+    return {
+      tree,
+      currentActive: undefined,
+    };
+  },
+  computed: {
+    currentActivePath() {
+      return this.currentActive ? `Путь выбранного файла/ссылки: ${this.currentActive}` : "";
+    },
+  },
+  methods: {
+    setActive(path) {
+      this.currentActive = path;
+    },
+  },
+};
 </script>
 
 <style>
+@import "./assets/css/tree-element.css";
+
 #app {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  font-size: 1em;
+  margin: 60px;
+}
+
+.full-path {
+  margin-bottom: 2vh;
 }
 </style>
