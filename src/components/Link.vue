@@ -1,6 +1,6 @@
 <template>
   <div :class="classList" @click="setActive(path)">
-    <link-icon class="icon" />
+    <icon type="link" class="icon" />
     <div class="link-fullname">
       <span>{{ item.name }}</span>
       <span class="link-target">{{ target }}</span>
@@ -11,13 +11,13 @@
 <script>
 import TreeElementMixin from "@/mixins/TreeElementMixin";
 import ListElementMixin from "@/mixins/ListElementMixin";
-import LinkIcon from "@/components/icons/LinkIcon";
+import Icon from "@/components/icons/Icon";
 
 export default {
   name: "Link",
   mixins: [TreeElementMixin, ListElementMixin],
   components: {
-    LinkIcon,
+    Icon,
   },
   computed: {
     target () {

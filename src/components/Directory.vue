@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="tree-list-name" @click="toggleShowChildren">
-      <directory-icon class="icon"/>
+      <icon type="directory" class="icon"/>
       <span>{{ name }}</span>
-      <arrow-icon class="icon-arrow"/>
+      <icon type="arrow" class="icon-arrow"/>
     </div>
     <div
       v-if="showChildren"
@@ -24,8 +24,7 @@
 
 <script>
 import TreeElementMixin from "@/mixins/TreeElementMixin";
-import DirectoryIcon from "@/components/icons/DirectoryIcon";
-import ArrowIcon from "@/components/icons/ArrowIcon";
+import Icon from "@/components/icons/Icon";
 import File from "@/components/File";
 import Link from "@/components/Link";
 
@@ -33,8 +32,7 @@ export default {
   name: "Directory",
   mixins: [TreeElementMixin],
   components: {
-    DirectoryIcon,
-    ArrowIcon,
+    Icon,
     File,
     Link,
   },

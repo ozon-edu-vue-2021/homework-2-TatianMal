@@ -1,6 +1,6 @@
 <template>
   <div :class="classList" @click="setActive(path)">
-    <file-icon class="icon" />
+    <icon type="file" class="icon" />
     <span>{{ item.name }}{{ item.target }}</span>
   </div>
 </template>
@@ -8,13 +8,13 @@
 <script>
 import TreeElementMixin from "@/mixins/TreeElementMixin";
 import ListElementMixin from "@/mixins/ListElementMixin";
-import FileIcon from "@/components/icons/FileIcon";
+import Icon from "@/components/icons/Icon";
 
 export default {
   name: "File",
   mixins: [TreeElementMixin, ListElementMixin],
   components: {
-    FileIcon,
+    Icon,
   },
 };
 </script>
